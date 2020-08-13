@@ -16,7 +16,7 @@ var about = require("./routes/about");
   E ANCHE UN FILE JAVASCRIPT CHE RENDERIZZI LA PAGINA AGGIUNTA
 */
 var app = express();
-// Questo è un commit
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views/'));
 app.set('view engine', 'jade');
