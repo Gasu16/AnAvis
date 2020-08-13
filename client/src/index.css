@@ -1,0 +1,13 @@
+.tp-bgimg.defaultimg {
+  background-repeat: no-repeat;
+  background-image: url("https://www.avismirano.it/wp-content/uploads/2017/11/home2-1500x430.jpg");
+  background-size: cover; 
+  background-position: center center; 
+  width: 100%;
+  height: 100%; 
+  opacity: 1; 
+  visibility: visible; 
+  z-index: 20;
+  src: url("https://www.avismirano.it/wp-content/uploads/2017/11/home2-1500x430.jpg");
+  opacity: 0.7 !important;
+}
