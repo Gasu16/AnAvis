@@ -25,7 +25,42 @@ class Registrarsi extends Component {
                                 <input type="cognome" class="form-control" id="cognome"></input>
                             
                                 <p></p>
+
+                                <label for="sesso">Sesso</label>
+                                <input type="sesso" class="form-control" id="sesso"></input>
                             
+                                <p></p>
+
+                                <label for="codiceFiscale">Codice Fiscale</label>
+                                <input type="codiceFiscale" class="form-control" id="codiceFiscale"></input>
+                            
+                                <p></p>
+
+                                <label for="">Data di nascita</label>
+                                <input type="date" class="form-control" id="DataNascita"></input>
+                            
+                                <p></p>
+
+                                <label for="luogoNascita">Luogo di nascita</label>
+                                <input type="luogoNascita" class="form-control" id="luogoNascita"></input>
+                            
+                                <p></p>
+
+                                <label for="cittàDomicilio">Città Domicilio</label>
+                                <input type="cittàDomicilio" class="form-control" id="cittàDomicilio"></input>
+                            
+                                <p></p>
+
+                                <label for="capDomicilio">Cap Domicilio</label>
+                                <input type="capDomicilio" class="form-control" id="capDomicilio"></input>
+                            
+                                <p></p>
+
+                                <label for="numeroCellulare">Numero di cellulare</label>
+                                <input type="numeroCellulare" class="form-control" id="numeroCellulare"></input>
+                            
+                                <p></p>
+
                                 <label for="email">Indirizzo email</label>
                                 <input type="email" class="form-control" id="email"></input>
                             

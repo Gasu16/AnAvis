@@ -52,6 +52,7 @@ class App extends React.Component{
               <Route path='/prenotarsi' component={Prenotarsi} />
               <Route path='/registrarsi' component={Registrarsi} />
               <Route path='/emergenza' component={RichiestaEmergenza} />
+              
           </Switch>
         
           {this.props.children}
