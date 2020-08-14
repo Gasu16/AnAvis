@@ -1,0 +1,68 @@
+.container {
+    color: blue;
+    background-color: rgb(224, 218, 217);
+    position: fixed;
+    width: 860px;
+    /* height: 240px; */
+    top: 10%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container h2 {
+    text-align: center;
+    
+}
+
+
+label{
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+
+/* FORM DI INPUT DEI VARI CAMPI COME EMAIL*/
+input [type=text]{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: black;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 290px;
+    height: 25px;
+    outline: none;
+}
+
+/* FORM DELLA PASSWORD */
+input[type=text],
+input[type=password] {
+    color: rgb(28, 28, 202);
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 290px;
+    height: 25px;
+}
+
+/* LA CHECKBOX DI "RICORDAMI" */
+input[type=checkbox] {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+/* IL BOTTONE DEL SUBMIT, PER COMPLETARE LA REGISTRAZIONE */
+button {
+    color: rgb(0, 83, 236);
+    width: 180px;
+    height: 30px;
+    font-weight: bold;
+}
+
+
+
+
+

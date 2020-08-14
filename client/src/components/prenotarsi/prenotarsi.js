@@ -5,7 +5,7 @@ import './prenotarsi.css';
 class Prenotarsi extends Component {
     render() {
         return (
-            "PRENOTAZIONEEEEEEEEEEEEEEEEEEEE"
+            "PRENOTAZIONE"
         );
     }
 }
