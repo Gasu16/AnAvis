@@ -1,85 +1,167 @@
+/* IMPORT FONTS */
 
-/* SCROLL BAR */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+/* SI RIFERISCE A TUTTO IL SITO PER INTERO (TUTTE LE PAGINE) */
+body {
+    background-color: white;
+	/*background-color: #9b59b6;*/
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+/* SCROLL BAR, SBLOCCALA QUANDO CI SARÀ BISOGNO */
+/*
 #cont{
     overflow-y: scroll;
 }
-
+*/
 .container {
-    color: blue;
-    background-color: rgb(223, 205, 202);
-    opacity: 0.8;
-    border-radius: 10px;
-    /*position: fixed;*/
-    width: 860px;
-    /* height: 240px; */
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+    width: 400px;
     top: 10%;
     align-items: center;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    
+	max-width: 100%;
 }
 
 
-.container h2 {
-    text-align: center;
-    
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+}
+
+.form {
+	padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
+.form button {
+	background-color: #da1e1e;
+	border: 2px solid #da1e1e;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
 }
 
 
 
-label{
-    display: inline-block;
-    margin-left: 18px;
-    padding-top: 10px;
-    font-size: 16px;
+.floating-btn {
+	border-radius: 26.5px;
+	background-color: #001F61;
+	border: 1px solid #001F61;
+	box-shadow: 0 16px 22px -17px #03153B;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
 }
 
-
-/* FORM DI INPUT DEI VARI CAMPI COME EMAIL*/
-input [type=text]{
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    color: black;
-    padding-left: 10px;
-    margin: 10px;
-    margin-top: 12px;
-    margin-left: 18px;
-    width: 290px;
-    height: 25px;
-    outline: none;
+.floating-btn:hover {
+	background-color: #ffffff;
+	color: #001F61;
 }
 
-/* FORM DELLA PASSWORD */
-input[type=text],
-input[type=password] {
-    color: rgb(28, 28, 202);
-    padding-left: 10px;
-    margin: 10px;
-    margin-top: 12px;
-    margin-left: 18px;
-    width: 290px;
-    height: 25px;
+.floating-btn:focus {
+	outline: none;
 }
 
-/* LA CHECKBOX DI "RICORDAMI" */
-input[type=checkbox] {
-    margin-left: 20px;
-    margin-top: 30px;
+.floating-text {
+	background-color: #001F61;
+	border-radius: 10px 10px 0 0;
+	color: #fff;
+	font-family: 'Muli';
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
 }
 
-/* IL BOTTONE DEL SUBMIT, PER COMPLETARE LA REGISTRAZIONE */
-button {
-    color: rgb(0, 83, 236);
-    width: 180px;
-    height: 30px;
-    font-weight: bold;
+.floating-text a {
+	color: #FF7500;
+	text-decoration: none;
 }
 
-.form{
-    padding: 30px 40px;
-}
-
-.form-control{
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-}
 

@@ -40,11 +40,12 @@ class App extends React.Component{
         <div className="App">
         
           <ul id="menu" className="navbar-nav mr-auto">
-            <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/prenotarsi'} className="nav-link">Prenotarsi</Link></li>
-            <li><Link to={'/registrarsi'} className="nav-link">Registrarsi</Link></li>
-            <li><Link to={'/emergenza'} className="nav-link">Richiesta Emergenza</Link></li>
+              <li><Link to={'/'} className="nav-link"> Home </Link></li>
+              <li><Link to={'/prenotarsi'} className="nav-link">Prenotarsi</Link></li>
+              <li><Link to={'/registrarsi'} className="nav-link">Registrarsi</Link></li>
+              <li><Link to={'/emergenza'} className="nav-link">Richiesta Emergenza</Link></li>
           </ul>
+          
           
           
           <Switch>
