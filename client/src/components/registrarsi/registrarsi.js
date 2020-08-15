@@ -8,28 +8,28 @@ class Registrarsi extends Component {
 
             <Fragment>
                 
-                <div id="cont" class="container">
-                    <div class="header">
+                <div id="cont" className="container">
+                    <div className="header">
                         <h2>Create Account</h2>
                     </div>
-                <form id="form" class="form">
-                    <div class="form-control">
-                        <label for="username">Username</label>
+                <form id="form" className="form">
+                    <div className="form-control">
+                        <label htmlFor="username">Username</label>
                         <input type="text" id="username" />
                         <small>Error message</small>
                     </div>
-                    <div class="form-control">
-                        <label for="username">Email</label>
+                    <div className="form-control">
+                        <label htmlFor="username">Email</label>
                         <input type="email" id="email" />
                         <small>Error message</small>
                     </div>
-                    <div class="form-control">
-                        <label for="username">Password</label>
+                    <div className="form-control">
+                        <label htmlFor="username">Password</label>
                         <input type="password" id="password"/>
                         <small>Error message</small>
                     </div>
-                    <div class="form-control">
-                        <label for="username">Password check</label>
+                    <div className="form-control">
+                        <label htmlFor="username">Password check</label>
                         <input type="password" id="password2"/>
                         <small>Error message</small>
                     </div>
