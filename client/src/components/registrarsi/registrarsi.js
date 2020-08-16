@@ -1,15 +1,8 @@
-/* 
-    PERCHÈ ALLA RIGA 148 QUANDO C'È <BUTTON ONCLICK={FUNZIONE JAVASCRIPT}>
-    SE METTO CONSOLE.LOG FUNZIONA
-    SE METTO UNA MIA FUNZIONE DEFINITA NELLA MIA CLASSE NON FUNZIONA?
-    CERCARE RIMEDIO SUBITO
-*/ 
-
 import React, { Component, Fragment } from 'react';
 import './registrarsi.css';
 
-
-const form = document.getElementById('form');
+        
+//const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -17,27 +10,23 @@ const password2 = document.getElementById('password2');
 
 
 
+
+
 class Registrarsi extends Component {
     // Funzioni JavaScript qui
-    
-    constructor(props, form, username, email, password, password2){
-        super(props);
-        this.form = form;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.password2 = password2;
-        console.log("SONO NEL COSTRUTTORE");
-    }
-    
-    setClick(input, form){
-        form.addEventListener("click", e => {
-            e.preventDefault();
-            console.log("HAI CLICCATO REGISTRATI");
-            regist.checkInputs();
-        });
-    }
+    state = {
+        form: "",
+        username: "",
+        email: "",
+        password:"",
+        password2: ""
+    };
 
+    btnHandler = e => {
+        console.log("STEE", e);
+        console.log("cosenza");
+        regist.checkInputs();
+    }
 
     setErrorFor(input, message) {
         const formControl = input.parentElement;
@@ -55,11 +44,14 @@ class Registrarsi extends Component {
         return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     }
 
-    funzione(){
-        console.log("AIUTOOOOOOOOOO");
-    }
-
     checkInputs() {
+        
+        //const form = document.getElementById('form');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const password2 = document.getElementById('password2');
+        
         // trim to remove the whitespaces
         
         const usernameValue = username.value.trim();
@@ -145,7 +137,9 @@ class Registrarsi extends Component {
                         <input type="password" id="password2"/>
                         <small>Error message</small>
                     </div>
-                    <button onClick={console.log("FINO A QUI...")}>Registrati
+                    <button type="submit" onClick={
+                        this.btnHandler
+                        }>Registrati
                         
                     </button>
                 </form>
