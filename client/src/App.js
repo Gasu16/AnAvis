@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Prenotarsi from './components/prenotarsi/prenotarsi';
 import Registrarsi from './components/registrarsi/registrarsi';
 import RichiestaEmergenza from './components/richiestaEmergenza/richiestaEmergenza';
+import Submit from './components/registrarsi/submit';
 //import routes from './routes';
 
 
@@ -53,7 +54,7 @@ class App extends React.Component{
               <Route path='/prenotarsi' component={Prenotarsi} />
               <Route path='/registrarsi' component={Registrarsi} />
               <Route path='/emergenza' component={RichiestaEmergenza} />
-              
+              <Route path='/submit' component={Submit} />
           </Switch>
         
           {this.props.children}

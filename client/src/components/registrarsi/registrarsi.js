@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './registrarsi.css';
+//import Submit from './submit';
 
         
 //const form = document.getElementById('form');
@@ -23,9 +24,14 @@ class Registrarsi extends Component {
     };
 
     btnHandler = e => {
-        console.log("STEE", e);
-        console.log("cosenza");
-        regist.checkInputs();
+        // Se i campi sono tutti validi, allora:
+        console.log("BUTTON HANDLER");
+        if(regist.checkInputs()){
+            return true;
+        }
+        // altrimenti...
+        e.preventDefault();
+        return false;
     }
 
     setErrorFor(input, message) {
@@ -59,8 +65,11 @@ class Registrarsi extends Component {
         const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
         
-
-        
+        /* Settiamo queste variabili a 0 per controllare la validità dei campi nei controlli che seguono */
+        var u_valid = 0;
+        var e_valid = 0;
+        var p1_valid = 0;
+        var p2_valid = 0;
         
         console.log("funzione checkInputs");
         if(usernameValue === '') {
@@ -69,6 +78,7 @@ class Registrarsi extends Component {
         } else {
             regist.setSuccessFor(username);
             console.log("username ok");
+            u_valid = 1;
         }
         
         if(emailValue === '') {
@@ -80,6 +90,7 @@ class Registrarsi extends Component {
         } else {
             regist.setSuccessFor(email);
             console.log("email ok");
+            e_valid = 1;
         }
         
         if(passwordValue === '') {
@@ -88,6 +99,7 @@ class Registrarsi extends Component {
         } else {
             console.log("password ok");
             regist.setSuccessFor(password);
+            p1_valid = 1;
         }
         
         if(password2Value === '') {
@@ -99,7 +111,14 @@ class Registrarsi extends Component {
         } else{
             console.log("password ok");
             regist.setSuccessFor(password2);
+            p2_valid = 1;
         }
+        if((u_valid & e_valid & p1_valid & p2_valid) === 1){
+            console.log("RITORNA VERO: TUTTI I CAMPI SONO VALIDI");
+            return true;
+        }
+        console.log("RITORNA FALSO: C'È ALMENO UN CAMPO NON VALIDO");
+        return false;
     }
 
     // QUESTO È IL MAIN()
@@ -114,7 +133,7 @@ class Registrarsi extends Component {
                     <div className="header">
                         <h2>Create Account</h2>
                     </div>
-                <form id="form" className="form">
+                <form id="form" className="form" action="submit">
                     <div className="form-control">
                         <label htmlFor="username">Username</label>
                         <input type="text" id="username" />
@@ -137,10 +156,8 @@ class Registrarsi extends Component {
                         <input type="password" id="password2"/>
                         <small>Error message</small>
                     </div>
-                    <button type="submit" onClick={
-                        this.btnHandler
-                        }>Registrati
-                        
+                    <button type="submit" onClick={this.btnHandler}>
+                        Registrati
                     </button>
                 </form>
                 </div>
