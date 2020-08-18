@@ -1,4 +1,5 @@
 var express = require('express');
+const app = require('../app');
 var router = express.Router();
 
 /* GET about page. */
@@ -8,14 +9,8 @@ router.get('/', function(req, res, next) {
     //res.send("WELCOME TO BACKEND SERVER");
 });
 
-router.post('/submit', function(req, res, next){
-    //res.render('submit', {title: 'Submit'});
-    //res.send("respond with a resource");
-    //console.log("AOOO ANDO STAMO NEL REFERENCE");
-    //fetch("http://localhost:3000/registrarsi");
-    //res.redirect('/submit');router.get('/', function(req, res, next
-    //res.render('submit', {title: 'Submit'});
-    //return("AO");
+router.post('/', function(req, res, next){
+    res.render('submit', {title: 'Submit'}); // mostriamo la pagina submit
 });
 
 module.exports = router;

@@ -35,8 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/about", about);
-app.all("/submit", submit);
-//app.post("/submit", submit);
+app.use("/submit", submit);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

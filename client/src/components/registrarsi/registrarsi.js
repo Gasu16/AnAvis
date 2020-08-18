@@ -162,7 +162,7 @@ class Registrarsi extends Component {
         return (
 
             <Fragment>
-                <div id="cont" className="container">
+                <div id="cont" className="container" onSubmit={this.btnHandler}>
                     <div className="header">
                         <h2>Create Account</h2>
                     </div>
