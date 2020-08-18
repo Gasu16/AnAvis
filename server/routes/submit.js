@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/submit', function(req, res, next){
+    //res.render('submit', {title: 'Submit'});
     //res.send("respond with a resource");
     //console.log("AOOO ANDO STAMO NEL REFERENCE");
     //fetch("http://localhost:3000/registrarsi");

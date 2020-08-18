@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './registrarsi.css';
 //import Submit from './submit';
-
+import axios from 'axios';
         
 //const form = document.getElementById('form');
 const username = document.getElementById('username');
@@ -22,12 +22,39 @@ class Registrarsi extends Component {
         password:"",
         password2: ""
     };
-
+/*
+    componentDidMount(){
+        axios.get().then(res => {console.log("COMPONENTE AXIOS");});
+    }
+*/
     btnHandler = e => {
         // Se i campi sono tutti validi, allora:
         console.log("BUTTON HANDLER");
+        /*
+        this.setState({[username] : username.value.trim()});
+        console.log("ECCOLO LO USERNAME MALEDETTO");
+        console.log(this.state.username);
+        */
         if(regist.checkInputs()){
-            return true;
+            axios({
+                method: 'post',
+                url: 'http://localhost:9000/submit',
+                headers: {
+                    'crossDomain': true,
+                    
+                    //'Content-Type': 'application/x-www-form-urlencoded' // in caso rimuovere
+                },
+                data: {
+                    username: window.userGlobal,
+                    email: window.emailGlobal,
+                    password: window.passwordGlobal,
+                    password2: window.password2Global,
+                }
+            }).then(res => {
+                console.log(res);
+                console.log("ECCO LA RISPOSTA");
+            });
+            //return true// in caso rimuovere
         }
         // altrimenti...
         e.preventDefault();
@@ -59,7 +86,13 @@ class Registrarsi extends Component {
         const password2 = document.getElementById('password2');
         
         // trim to remove the whitespaces
-        
+        // Definiamo le variabili globali con "window" per riutilizzarle su btnHandler() 
+        window.userGlobal = username.value.trim();
+        window.emailGlobal = email.value.trim();
+        window.passwordGlobal = password.value.trim();
+        window.password2Global = password2.value.trim();
+
+
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
@@ -133,7 +166,7 @@ class Registrarsi extends Component {
                     <div className="header">
                         <h2>Create Account</h2>
                     </div>
-                <form id="form" className="form" action="submit">
+                <form id="form" className="form">
                     <div className="form-control">
                         <label htmlFor="username">Username</label>
                         <input type="text" id="username" />
@@ -141,18 +174,18 @@ class Registrarsi extends Component {
 
                     </div>
                     <div className="form-control">
-                        <label htmlFor="username">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input type="email" id="email" />
                         <small>Error message</small>
 
                     </div>
                     <div className="form-control">
-                        <label htmlFor="username">Password</label>
+                        <label htmlFor="password">Password</label>
                         <input type="password" id="password"/>
                         <small>Error message</small>
                     </div>
                     <div className="form-control">
-                        <label htmlFor="username">Password check</label>
+                        <label htmlFor="password">Password check</label>
                         <input type="password" id="password2"/>
                         <small>Error message</small>
                     </div>
