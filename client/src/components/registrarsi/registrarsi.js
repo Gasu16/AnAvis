@@ -2,9 +2,13 @@ import React, { Component, Fragment } from 'react';
 import './registrarsi.css';
 //import Submit from './submit';
 import axios from 'axios';
+<<<<<<< HEAD
 
 // DATA: 19/08/2020
 
+=======
+        
+>>>>>>> 24d301aa4cae2b373168802d062278895a9e73f3
 //const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
