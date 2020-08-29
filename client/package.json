@@ -37,10 +37,6 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "html-loader": "^1.2.1"
-=======
     "html-loader": "^1.1.0"
->>>>>>> 24d301aa4cae2b373168802d062278895a9e73f3
   }
 }
