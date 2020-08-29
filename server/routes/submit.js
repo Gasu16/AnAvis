@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next){
     res.render('submit', {title: 'Submit'}); // mostriamo la pagina submit
+    
 });
 
 module.exports = router;
