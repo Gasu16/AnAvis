@@ -10,10 +10,6 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
 var about = require("./routes/about");
 var submit = require("./routes/submit");
-<<<<<<< HEAD
-//var db = require("./database/databasejs");
-=======
->>>>>>> 24d301aa4cae2b373168802d062278895a9e73f3
 /*
   Aggiungi una nuova pagina qui:
   var nuovaPagina = require("./percorso/nuovaPagina");
@@ -40,10 +36,6 @@ app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/about", about);
 app.use("/submit", submit);
-<<<<<<< HEAD
-//app.use("/db", db);
-=======
->>>>>>> 24d301aa4cae2b373168802d062278895a9e73f3
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
