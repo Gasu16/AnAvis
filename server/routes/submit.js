@@ -1,10 +1,5 @@
 var express = require('express');
 const app = require('../app');
-<<<<<<< HEAD
-//const { Database } = require('sqlite3');
-//const { dab } = require('../database/databasejs');
-=======
->>>>>>> 24d301aa4cae2b373168802d062278895a9e73f3
 var router = express.Router();
 
 /* GET about page. */
