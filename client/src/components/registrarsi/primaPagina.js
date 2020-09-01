@@ -116,9 +116,12 @@ class primaPagina extends Component {
                     </div>
                 <form id="form" className="form" action="Registrarsi">
                 <div className="form-control">
-                        <label htmlFor="username">Ruolo</label>
-                        <input type="ruolo" id="ruolo" />
-                        <small>Error message</small>
+                <legend>RUOLO</legend>
+                        <select name="ruolo" id="ruolo">
+                            <option value="DOTTORE">DOTTORE </option>
+                            <option value="DONATORE">DONATORE </option>
+                            <option value="SEDE AVIS">SEDE AVIS </option>
+                        </select>
                     </div>
                     <div className="form-control">
                         <label htmlFor="username">Email</label>
