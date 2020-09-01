@@ -20,11 +20,11 @@ body {
 }
 
 /* SCROLL BAR, SBLOCCALA QUANDO CI SARÀ BISOGNO */
-/*
+
 #cont{
     overflow-y: scroll;
 }
-*/
+
 .container {
 	background-color: #fff;
 	border-radius: 5px;

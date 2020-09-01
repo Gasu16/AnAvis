@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
 var about = require("./routes/about");
 var submit = require("./routes/submit");
+var prenotarsiSubmit = require("./routes/prenotarsiSubmit");
 /*
   Aggiungi una nuova pagina qui:
   var nuovaPagina = require("./percorso/nuovaPagina");
@@ -36,7 +37,7 @@ app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/about", about);
 app.use("/submit", submit);
-
+app.use("/prenotarsiSubmit", prenotarsiSubmit);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

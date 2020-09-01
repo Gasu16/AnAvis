@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './registrarsi.css';
 //import Submit from './submit';
 import axios from 'axios';
-        
+
 //const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -92,12 +92,12 @@ class Registrarsi extends Component {
         window.passwordGlobal = password.value.trim();
         window.password2Global = password2.value.trim();
 
-
+/*
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
-        
+*/        
         /* Settiamo queste variabili a 0 per controllare la validità dei campi nei controlli che seguono */
         var u_valid = 0;
         var e_valid = 0;
@@ -105,7 +105,7 @@ class Registrarsi extends Component {
         var p2_valid = 0;
         
         console.log("funzione checkInputs");
-        if(usernameValue === '') {
+        if(window.userGlobal === '') {
             regist.setErrorFor(username, 'Inserisci username');
             console.log("username nullo");
         } else {
@@ -114,10 +114,10 @@ class Registrarsi extends Component {
             u_valid = 1;
         }
         
-        if(emailValue === '') {
+        if(window.emailGlobal === '') {
             regist.setErrorFor(email, 'Inserisci email');
             console.log("email nulla");
-        } else if (!regist.isEmail(emailValue)) {
+        } else if (!regist.isEmail(window.emailGlobal)) {
             regist.setErrorFor(email, 'Email non valida');
             console.log("email NON valida");
         } else {
@@ -126,7 +126,7 @@ class Registrarsi extends Component {
             e_valid = 1;
         }
         
-        if(passwordValue === '') {
+        if(window.passwordGlobal === '') {
             console.log("password nulla");
             regist.setErrorFor(password, 'Inserisci password');
         } else {
@@ -135,10 +135,10 @@ class Registrarsi extends Component {
             p1_valid = 1;
         }
         
-        if(password2Value === '') {
+        if(window.password2Global === '') {
             console.log("password DUE nulla");
             regist.setErrorFor(password2, 'Inserisci password');
-        } else if(passwordValue !== password2Value) {
+        } else if(window.passwordGlobal !== window.password2Global) {
             console.log("Password diversa");
             regist.setErrorFor(password2, 'Le password non corrispondono');
         } else{
