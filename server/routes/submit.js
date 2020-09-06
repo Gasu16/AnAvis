@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-    console.log("Ecco la richiesta mandata dal POST di react");
-    console.log(req.body); // leggiamo la richesta mandata dal client (react)
+    //console.log("Ecco la richiesta mandata dal POST di react");
+    //console.log(req.body); // leggiamo la richesta mandata dal client (react)
     res.render('submit', {title: 'Submit'});
     next();
 });
