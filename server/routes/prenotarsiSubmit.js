@@ -2,7 +2,7 @@ var express = require('express');
 const app = require('../app');
 //const DatabaseManage = require('../database/databasemanage');
 var router = express.Router();
-
+const sedeAvis = require('../routes/sedeAvis');
 // Da cambiare path per Stefano
 const dbPath = '/home/mob/AnAvis/server/databaseManage.db';
 
@@ -24,7 +24,11 @@ router.post('/', function(req, res, next){
 });
 
 // Durante la scrittura del FORM...
-router.use(function(req, res, next){
+router.use('/',function(req, res, next){
+    console.log("sede Avis");
+    const sede_avis = new sedeAvis(req, res, next);
+    sede_avis.getSedi(req, res, next);
+    /*
     var sede = req.body.sede;
     console.log("sede: " , sede);
     let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
@@ -47,6 +51,7 @@ router.use(function(req, res, next){
     });
     
     db.close();
+    */
     next();
 });
 

@@ -11,7 +11,7 @@ var testAPIRouter = require("./routes/testAPI");
 var about = require("./routes/about");
 var submit = require("./routes/submit");
 var prenotarsiSubmit = require("./routes/prenotarsiSubmit");
-
+var sedeAvis = require("./routes/sedeAvis");
 
 /*
   Aggiungi una nuova pagina qui:
@@ -40,7 +40,7 @@ app.use("/testAPI", testAPIRouter);
 app.use("/about", about);
 app.use("/submit", submit);
 app.use("/prenotarsiSubmit", prenotarsiSubmit);
-
+app.use("/sedeAvis", sedeAvis);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
