@@ -45,7 +45,7 @@ class prenotarsi extends Component {
         return false;
     }
 
-    
+
 
     setErrorFor(input, message) {
         const formControl = input.parentElement;
@@ -66,11 +66,13 @@ class prenotarsi extends Component {
         const sede = document.getElementById('sede');
         const data = document.getElementById('data');
         
+        //window.regioneGlobal = regione.value.trim();
         window.regioneGlobal = regione.value.trim();
         window.sedeGlobal = sede.value.trim();
         window.dataGlobal = data.value.trim();
 
         // trim to remove the whitespaces
+        //const regioneValue = regione.value.trim();
         const regioneValue = regione.value.trim();
         const sedeValue = sede.value.trim();
         const dataValue = data.value.trim();
@@ -81,6 +83,7 @@ class prenotarsi extends Component {
         var dt_valid = 0;
         
         console.log("funzione checkInputs");
+        
         if(regioneValue === '') {
             regist.setErrorFor(regione, 'Inserisci regione');
             console.log("regione nulla");
@@ -89,7 +92,7 @@ class prenotarsi extends Component {
             console.log("regione ok");
             rg_valid = 1;
         }
-
+        
         if(sedeValue === '') {
             regist.setErrorFor(sede, 'Inserisci sede');
             console.log("inserisci sede");
@@ -108,7 +111,7 @@ class prenotarsi extends Component {
             dt_valid = 1;
         }
 
-
+        // ho tolto rg_valid, in caso rimetterlo
         if((rg_valid & dt_valid & se_valid) === 1){
             console.log("RITORNA VERO: TUTTI I CAMPI SONO VALIDI");
             return true;
@@ -134,7 +137,7 @@ class prenotarsi extends Component {
                 <div className="form-control">
                         
                         <legend>Regione</legend>
-                        <select name="lista_regioni" id="regioni" className="custom-select">
+                        <select name="regione" id="regione" className="custom-select">
                             
                             <option value="ABRUZZO">ABRUZZO</option>
                             <option value="BASILICATA">BASILICATA</option>
