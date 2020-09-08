@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
-        
+
 //const form = document.getElementById('form');
 const regione = document.getElementById('regione');
-//const sede = document.getElementById('sede');
+const sede = document.getElementById('sede');
 const data = document.getElementById('data');
 
 
@@ -12,7 +12,7 @@ class prenotarsi extends Component {
     // Funzioni JavaScript qui
     state = {
         regione:"",
-        //sede: "",
+        sede: "",
         data: ""
     };
 
@@ -31,7 +31,7 @@ class prenotarsi extends Component {
                 },
                 data: {
                     regione: window.regioneGlobal,
-                    //sede: window.sedeGlobal,
+                    sede: window.sedeGlobal,
                     data: window.dataGlobal,
                 }
             }).then(res => {
@@ -44,6 +44,8 @@ class prenotarsi extends Component {
         e.preventDefault();
         return false;
     }
+
+    
 
     setErrorFor(input, message) {
         const formControl = input.parentElement;
@@ -61,21 +63,21 @@ class prenotarsi extends Component {
         
         //const form = document.getElementById('form');
         const regione = document.getElementById('regione');
-        //const sede = document.getElementById('sede');
+        const sede = document.getElementById('sede');
         const data = document.getElementById('data');
         
         window.regioneGlobal = regione.value.trim();
-        //window.sedeGlobal = sede.value.trim();
+        window.sedeGlobal = sede.value.trim();
         window.dataGlobal = data.value.trim();
 
         // trim to remove the whitespaces
         const regioneValue = regione.value.trim();
-        //const sedeValue = sede.value.trim();
+        const sedeValue = sede.value.trim();
         const dataValue = data.value.trim();
         
         /* Settiamo queste variabili a 0 per controllare la validità dei campi nei controlli che seguono */
         var rg_valid = 0;
-        //var se_valid = 0;
+        var se_valid = 0;
         var dt_valid = 0;
         
         console.log("funzione checkInputs");
@@ -87,7 +89,7 @@ class prenotarsi extends Component {
             console.log("regione ok");
             rg_valid = 1;
         }
-/*
+
         if(sedeValue === '') {
             regist.setErrorFor(sede, 'Inserisci sede');
             console.log("inserisci sede");
@@ -96,7 +98,7 @@ class prenotarsi extends Component {
             console.log("sede ok");
             se_valid = 1;
         }
-*/
+
         if(dataValue === '') {
             regist.setErrorFor(data, 'Inserisci data');
             console.log("inserisci data");
@@ -107,7 +109,7 @@ class prenotarsi extends Component {
         }
 
 
-        if((rg_valid & dt_valid) === 1){
+        if((rg_valid & dt_valid & se_valid) === 1){
             console.log("RITORNA VERO: TUTTI I CAMPI SONO VALIDI");
             return true;
         }
@@ -128,15 +130,42 @@ class prenotarsi extends Component {
                         <h2>Inoltra prenotazione</h2>
                     </div>
                 <form id="form" className="form">
+
                 <div className="form-control">
-                        <label htmlFor="username">Regione</label>
-                        <input type="regione" id="regione" />
+                        
+                        <legend>Regione</legend>
+                        <select name="lista_regioni" id="regioni" className="custom-select">
+                            
+                            <option value="ABRUZZO">ABRUZZO</option>
+                            <option value="BASILICATA">BASILICATA</option>
+                            <option value="CALABRIA">CALABRIA</option>
+                            <option value="CAMPANIA">CAMPANIA</option>
+                            <option value="EMILIA-ROMAGNA">EMILIA-ROMAGNA</option>
+                            <option value="FRIULI VENEZIA-GIULIA">FRIULI VENEZIA-GIULIA</option>
+                            <option value="LAZIO">LAZIO</option>
+                            <option value="LIGURIA">LIGURIA</option>
+                            <option value="LOMBARDIA">LOMBARDIA</option>
+                            <option value="MARCHE">MARCHE</option>
+                            <option value="MOLISE">MOLISE</option>
+                            <option value="PIEMONTE">PIEMONTE</option>
+                            <option value="PUGLIA">PUGLIA</option>
+                            <option value="SARDEGNA">SARDEGNA</option>
+                            <option value="SICILIA">SICILIA</option>
+                            <option value="TOSCANA">TOSCANA</option>
+                            <option value="TRENTINO-ALTO ADIGE">TRENTINO-ALTO ADIGE</option>
+                            <option value="UMBRIA">UMBRIA</option>
+                            <option value="VALLE D'AOSTA">VALLE D'AOSTA</option>
+                            <option value="VENETO">VENETO</option>
+                        </select> 
                         <small>Error message</small>
+                        
                     </div>
-                    <div className="form-control">
+
+
+                <div className="form-control">
                         
                         <legend>Sede</legend>
-                        <select name="siti" >
+                        <select name="sede" id="sede">
                             <option value="COSENZA">COSENZA  </option>
                             <option value="CATANZARO">CATANZARO  </option>
                             <option value="TRAPANI">TRAPANI  </option>
@@ -145,7 +174,7 @@ class prenotarsi extends Component {
                         
                     </div>
                     <div className="form-control">
-                        <label htmlFor="username">Data</label>
+                        <label htmlFor="data">Data</label>
                         <input type="date" id="data"/>
                         <small>Error message</small>
                     </div>
@@ -162,6 +191,6 @@ class prenotarsi extends Component {
     }
 }
 
-const regist = new prenotarsi(regione, data);
+const regist = new prenotarsi(regione, sede, data);
 
 export default prenotarsi;

@@ -26,7 +26,7 @@ class App extends React.Component{
 
   callAPI(){
     /*
-    fetch("http://localhost:9000/")
+    fetch("http://localhost:9000/prenotarsiSubmit")
       .then(res => res.text())
       .then(res => this.setState({apiResponse: res}));
     */
