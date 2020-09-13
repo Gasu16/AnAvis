@@ -32,7 +32,7 @@ class prenotarsiPrimaPagina extends Component {
             }).then(res => {
                 console.log(res);
                 console.log("ECCO LA RISPOSTA - PRENOTARSI");
-                window.location.href="http://localhost:3000/prenotarsi";
+                window.location.href="http://localhost:3000/prenotarsi"; // Qui cambia pagina (redirect)
             });
             //return true; // in caso rimuovere
             
