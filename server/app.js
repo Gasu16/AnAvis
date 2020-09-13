@@ -12,6 +12,8 @@ var about = require("./routes/about");
 var submit = require("./routes/submit");
 var prenotarsiSubmit = require("./routes/prenotarsiSubmit");
 var sedeAvis = require("./routes/sedeAvis");
+var prenotarsiPrimaPagina = require("./routes/prenotarsiPrimaPagina");
+//const { default: prenotarsiPrimaPagina } = require('../client/src/components/prenotarsi/prenotarsiPrimaPagina');
 
 /*
   Aggiungi una nuova pagina qui:
@@ -41,7 +43,8 @@ app.use("/about", about);
 app.use("/submit", submit);
 app.use("/prenotarsiSubmit", prenotarsiSubmit);
 app.use("/sedeAvis", sedeAvis);
-
+app.use("/prenotarsiPrimaPagina", prenotarsiPrimaPagina);
+//app.use("/prenotarsi", prenotarsiSubmit);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

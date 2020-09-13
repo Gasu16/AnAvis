@@ -13,6 +13,7 @@ import RichiestaEmergenza from './components/richiestaEmergenza/richiestaEmergen
 import emergenzaSubmit from './components/richiestaEmergenza/emergenzaSubmit';
 import prenotarsiSubmit from './components/prenotarsi/prenotarsiSubmit';
 import Submit from './components/registrarsi/submit';
+import prenotarsiPrimaPagina from './components/prenotarsi/prenotarsiPrimaPagina';
 //import routes from './routes';
 
 
@@ -46,7 +47,7 @@ class App extends React.Component{
         
           <ul id="menu" className="navbar-nav mr-auto">
               <li><Link to={'/'} className="nav-link"> Home </Link></li>
-              <li><Link to={'/prenotarsi'} className="nav-link">Prenotarsi</Link></li>
+              <li><Link to={'/prenotarsiPrimaPagina'} className="nav-link">Prenotarsi</Link></li>
               <li><Link to={'/primaPagina'} className="nav-link">Registrarsi</Link></li>
               <li><Link to={'/emergenza'} className="nav-link">Richiesta Emergenza</Link></li>
           </ul>
@@ -62,6 +63,7 @@ class App extends React.Component{
               <Route path='/emergenzaSubmit' component={emergenzaSubmit} />
               <Route path='/submit' component={Submit} />
               <Route path='/prenotarsiSubmit' component={prenotarsiSubmit} />
+              <Route path='/prenotarsiPrimaPagina' component={prenotarsiPrimaPagina} />
           </Switch>
         
           {this.props.children}
