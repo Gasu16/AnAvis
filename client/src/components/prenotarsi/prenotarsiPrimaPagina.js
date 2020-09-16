@@ -33,10 +33,14 @@ class prenotarsiPrimaPagina extends Component {
             }).then(res => {
 
                 console.log(res);
+
                 console.log("ECCO LA RISPOSTA - PRENOTARSI PRIMA PAGINA");
                 window.regioneScelta = JSON.parse(res.config.data); // Leggiamo la regione scelta dalla risposta
                 console.log(window.regioneScelta); // e la stampiamo a video sulla console del browser
                 //window.sedeScelta = JSON.parse(res.config.data.sede);
+
+                console.log("ECCO LA RISPOSTA - PRENOTARSI");
+
                 window.location.href="http://localhost:3000/prenotarsi"; // Qui cambia pagina (redirect)
             });
             //return true; // in caso rimuovere
