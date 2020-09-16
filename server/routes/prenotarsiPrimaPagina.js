@@ -2,61 +2,58 @@ var express = require('express');
 const app = require('../app');
 //const DatabaseManage = require('../database/databasemanage');
 var router = express.Router();
-const sedeAvis = require('../routes/sedeAvis');
+const sedeAnAvis = require('../routes/sedeAvis');
 // Da cambiare path per Stefano
 const dbPath = '/home/mob/AnAvis/server/databaseManage.db';
-
+//var rowsSedi = require('../routes/sedeAvis/rows');
 var sqlite3 = require('sqlite3').verbose();
 /* GET about page. */
-
-
+global.dati;
+const {getSedi} = require('./sedeAvis');
 
 router.get('/', function(req, res, next) {
     res.render('prenotarsiPrimaPagina', {title: 'prenotarsiPrimaPagina'}); // mostriamo la pagina prenotarsiSubmit
     next();
-    
 });
 
 
-router.post('/', function(req, res, next){    
+router.post('/', async function(req, res, next){    
     res.render('prenotarsiPrimaPagina', {title: 'prenotarsiPrimaPagina'});
-    next();
+    console.log("AIIII");
+    var sede_avis = new sedeAnAvis(req, res, next);
+    var dati = await sede_avis.getSedi(req, res, next);
+    console.log("dati: ", sedeAnAvis.data); // ritorna undefined
+    //console.log("data => ", await sedeAnAvis.data); // ritorna undefined
+    //res.send(await dati);
+    
 });
 
+
+
+
+
+/*
 // Durante la scrittura del FORM...
-router.use('/',function(req, res, next){
+router.use('/', async function(req, res, next){
+
     console.log("sede Avis");
+    var sede_avis = new sedeAnAvis(req, res, next);
+    var dati = await sede_avis.getSedi(req, res, next);
     
+    console.log("dati: ", dati); // ritorna undefined
+    //console.log("data => ", await sedeAnAvis.data); // ritorna undefined
+    res.send(await dati);
     
-    const sede_avis = new sedeAvis(req, res, next);
-    sede_avis.getSedi(req, res, next);
-    next();
 });
+*/
 
 
 // Inserisci nel database le informazioni date nel FORM
 router.use(function(req, res, next){
+    // vuoto
     
-    let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
-        if(err){
-          console.log("Ecco un errore in databasemanage.js");
-          console.error(err.message);
-        }
-        console.log("Database connesso correttamente");
-      });
-      db.serialize(function() {
-        //let sql = 'select nome from REGIONE'; 
-        //var query = "INSERT INTO [Category] (CName,CSubCategory) VALUES ('" +req.body.CName+"','"+req.body.CSubCategory+"')";
-        let sql = "INSERT INTO PRENOTARSI(Regione) VALUES ('"+req.body.regione+"')";
-        db.all(sql, [], (err, rows) => {
-          if(err)throw err; // errore
-          rows.forEach((row) => {
-            console.log(row);
-          });
-        });
-      });
+    
       
-      db.close();
 });
 
 module.exports = router;

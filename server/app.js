@@ -30,6 +30,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cors({origin: 'http://localhost:3000/registrarsi', credentials: true}));
+//app.use(cors({origin: 'http://localhost:9000/prenotarsiPrimaPagina', credentials: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

@@ -34,12 +34,13 @@ class App extends React.Component{
   }
 
   
-  componentWillMount(){
-    this.callAPI();
+  async componentWillMount(){
+    
   }
 
 // Questo è quello che viene mostrato
   render(){
+    
     return (
       
       <Router>      

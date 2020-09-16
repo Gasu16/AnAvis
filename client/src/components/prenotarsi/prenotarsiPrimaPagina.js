@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+//import { data } from '../../../../server/routes/sedeAvis';
 
 
 //const form = document.getElementById('form');
@@ -16,7 +17,7 @@ class prenotarsiPrimaPagina extends Component {
     btnHandler = e => {
         // Se i campi sono tutti validi, allora:
         console.log("BUTTON HANDLER");
-        
+
         if(regist.checkInputs()){                
             axios({
                 method: 'post',
@@ -30,9 +31,13 @@ class prenotarsiPrimaPagina extends Component {
                     regione: window.regioneGlobal,
                 }
             }).then(res => {
+
                 console.log(res);
-                console.log("ECCO LA RISPOSTA - PRENOTARSI");
-                window.location.href="http://localhost:3000/prenotarsi";
+                console.log("ECCO LA RISPOSTA - PRENOTARSI PRIMA PAGINA");
+                window.regioneScelta = JSON.parse(res.config.data); // Leggiamo la regione scelta dalla risposta
+                console.log(window.regioneScelta); // e la stampiamo a video sulla console del browser
+                //window.sedeScelta = JSON.parse(res.config.data.sede);
+                window.location.href="http://localhost:3000/prenotarsi"; // Qui cambia pagina (redirect)
             });
             //return true; // in caso rimuovere
             

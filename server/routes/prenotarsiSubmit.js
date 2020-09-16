@@ -28,6 +28,9 @@ router.use('/',function(req, res, next){
     console.log("sede Avis");
     const sede_avis = new sedeAvis(req, res, next);
     sede_avis.getSedi(req, res, next);
+    var sede = req.body.sede;
+    console.log("sede: " , sede);
+    //console.log("sendSede: ", a);
     /*
     var sede = req.body.sede;
     console.log("sede: " , sede);
@@ -58,7 +61,7 @@ router.use('/',function(req, res, next){
 
 // Inserisci nel database le informazioni date nel FORM
 router.use(function(req, res, next){
-    
+    /*
     let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
         if(err){
           console.log("Ecco un errore in databasemanage.js");
@@ -69,6 +72,8 @@ router.use(function(req, res, next){
       db.serialize(function() {
         //let sql = 'select nome from REGIONE'; 
         //var query = "INSERT INTO [Category] (CName,CSubCategory) VALUES ('" +req.body.CName+"','"+req.body.CSubCategory+"')";
+        console.log("Ecco le sedi: ");
+        console.log(req.body.sede);
         let sql = "INSERT INTO PRENOTARSI(Regione, Sede, DataPrenotazione) VALUES ('"+req.body.regione+"','"+req.body.sede+"' ,'"+req.body.data+"')";
         db.all(sql, [], (err, rows) => {
           if(err)throw err; // errore
@@ -79,6 +84,7 @@ router.use(function(req, res, next){
       });
       
       db.close();
+      */
 });
 
 module.exports = router;
